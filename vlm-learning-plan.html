@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>研0 VLM 方向大厂实习 · 2个月冲刺学习规划</title>
+<style>
+  :root{
+    --text:#1A1B1C; --text2:#6B7280; --bg:#F4F3EE; --card:#FFFFFF;
+    --border:#E4E3DD; --accent:#9BBBF4; --accent-deep:#4A6FA5;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:'Roboto','PingFang SC','Segoe UI',Arial,sans-serif;line-height:1.6;}
+  .wrap{max-width:1020px;margin:0 auto;padding:28px 20px 48px;}
+  .hero{background:linear-gradient(135deg,#ffffff,#EEF3FC);border:1px solid var(--border);
+    border-radius:16px;padding:26px 26px 20px;margin-bottom:20px;}
+  .hero h1{margin:0 0 6px;font-size:26px;font-weight:700;color:var(--text);}
+  .hero .sub{color:var(--text2);font-size:14px;margin-bottom:16px;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{background:#fff;border:1px solid var(--border);border-radius:999px;
+    padding:5px 12px;font-size:12.5px;color:#333;}
+  .chip b{color:var(--accent-deep);}
+  .callout{background:#F0F6FF;border:1px solid #C9DBF5;border-left:4px solid var(--accent);
+    border-radius:12px;padding:14px 16px;font-size:14px;margin:18px 0;}
+  .callout b{color:var(--accent-deep);}
+  .callout.warn{background:#FFF8EC;border:1px solid #EAD9A8;border-left:4px solid #E6C25C;}
+  .callout.warn b{color:#8A6D1E;}
+  h2{font-size:19px;margin:34px 0 4px;padding-left:10px;border-left:4px solid var(--accent);
+    color:var(--text);}
+  .sec-desc{color:var(--text2);font-size:13px;margin:0 0 16px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;
+    padding:18px;margin:12px 0;}
+  .fig-note{font-size:12px;color:var(--text2);margin-top:6px;}
+  /* 八周冲刺路线 */
+  .tl{position:relative;margin:16px 0 0 6px;padding-left:36px;}
+  .tl:before{content:"";position:absolute;left:12px;top:8px;bottom:8px;width:2px;background:#E4E3DD;}
+  .wk{position:relative;margin-bottom:14px;background:#fff;border:1px solid var(--border);
+    border-radius:12px;padding:10px 14px;}
+  .wk:before{content:"";position:absolute;left:-30px;top:15px;width:14px;height:14px;
+    border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--wc,#9BBBF4);background:var(--wc,#9BBBF4);}
+  .wk .head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;margin-bottom:3px;}
+  .wk .head b{font-size:14px;}
+  .wk .head span{font-size:12px;color:var(--text2);}
+  .wk .content{font-size:12.8px;color:#444;}
+  .wk .verify{font-size:12.2px;color:var(--accent-deep);margin-top:4px;}
+  .mstone{position:relative;margin:6px 0 0 6px;padding-left:36px;}
+  .mstone .box{background:#FFF7E6;border:1px dashed #E6C25C;border-radius:12px;padding:10px 14px;font-size:13px;}
+  .mstone .box b{color:#8A6D1E;}
+  /* 知识层 */
+  .layers{display:flex;flex-direction:column;gap:10px;}
+  .layer{display:flex;flex-wrap:wrap;align-items:stretch;background:#fff;
+    border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+  .layer .tag{flex:0 0 96px;display:flex;flex-direction:column;justify-content:center;
+    align-items:center;color:#fff;padding:10px;text-align:center;}
+  .layer .tag .lv{font-size:18px;font-weight:700;}
+  .layer .tag .nm{font-size:11.5px;margin-top:2px;}
+  .layer .body{flex:1 1 320px;padding:11px 14px;min-width:0;}
+  .layer .body .topics{font-size:13px;margin-bottom:4px;}
+  .layer .body .verify{font-size:12.5px;color:var(--text2);}
+  .layer .body .verify b{color:var(--accent-deep);font-weight:600;}
+  .lv-0{background:#9EACEA;} .lv-1{background:#A3D5E8;} .lv-2{background:#94D4D0;}
+  .lv-3{background:#94D8C3;} .lv-4{background:#8BC8EA;} .lv-5{background:#9BBBF4;}
+  .lv-6{background:#C9A7E8;}
+  /* 岗位对比 */
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--border);font-size:13px;text-align:left;
+    vertical-align:top;}
+  th{background:#F2F3F5;font-weight:600;color:#333;}
+  tr:last-child td{border-bottom:none;}
+  td b{color:var(--accent-deep);}
+  .pos-tag{display:inline-block;border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600;color:#fff;}
+  /* 阶梯 */
+  .ladder{counter-reset:step;}
+  .step{display:flex;gap:14px;padding:12px 4px;border-left:2px solid var(--border);
+    margin-left:14px;position:relative;}
+  .step:before{counter-increment:step;content:counter(step);position:absolute;left:-17px;top:12px;
+    width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;}
+  .step .s-name{flex:0 0 190px;font-weight:600;font-size:14px;}
+  .step .s-do{flex:1 1 280px;font-size:13px;color:#444;}
+  .step .s-get{flex:1 1 200px;font-size:12.5px;color:var(--text2);}
+  .cols{display:flex;flex-wrap:wrap;gap:14px;}
+  .cols .card{flex:1 1 300px;margin:0;}
+  ul.tick{list-style:none;padding-left:0;margin:0;}
+  ul.tick li{padding-left:22px;position:relative;font-size:13.5px;margin-bottom:7px;}
+  ul.tick li:before{content:"✓";position:absolute;left:0;color:#52C41A;font-weight:700;}
+  .res{display:flex;flex-wrap:wrap;gap:14px;}
+  .res .card{flex:1 1 280px;margin:0;}
+  .res .card h4{margin:0 0 8px;font-size:14px;color:var(--accent-deep);}
+  .res .card li{font-size:12.8px;margin-bottom:5px;}
+  footer{margin-top:34px;padding-top:14px;border-top:1px solid var(--border);
+    font-size:12px;color:var(--text2);}
+  footer a{color:var(--accent-deep);text-decoration:none;word-break:break-all;}
+  @media (max-width:480px){
+    .hero h1{font-size:21px;}
+    .step .s-name{flex-basis:100%;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <h1>研0 VLM 方向大厂实习 · 2 个月冲刺学习规划</h1>
+    <div class="sub">2026 年 10 月中旬 → 2026 年 12 月中旬 · 8 周从"懂概念"到"能投递"</div>
+    <div class="chips">
+      <span class="chip">起点：<b>懂 ML 概念，缺实操</b></span>
+      <span class="chip">目标：<b>大厂 VLM 算法实习</b></span>
+      <span class="chip">主攻方向：<b>工程/应用型 + 评测/数据型岗位</b></span>
+      <span class="chip">核心策略：<b>每周 35-40h 高强度冲刺</b></span>
+    </div>
+    <div class="callout">
+      <b>一句话结论：</b>大厂 VLM 算法实习的硬门槛是"能动手训练模型 + 有可深挖的完整项目 + 面试能讲清细节"，不是论文。你"懂概念、没实操"的基线完全够用——按 2 个月冲刺版（2026.10 中 → 2026.12 中）走完八周路线，每周 35-40 小时、严格执行阶段验收，冲刺结束后正好衔接 2027 年春季投递窗口。
+    </div>
+  </div>
+
+  <h2>一、八周冲刺路线图</h2>
+  <p class="sec-desc">核心结构：八周五段推进，每周有明确完成标准。冲刺结束后进入缓冲期保持手感，衔接 2027 年 2-5 月春季投递窗口。</p>
+  <div class="card" style="padding:14px;">
+    <div class="tl">
+      <div class="wk" style="--wc:#A3D5E8;">
+        <div class="head"><b>W1-2 筑基</b><span>第 1-2 周 · 10月中-10月底</span></div>
+        <div class="content">PyTorch 环境 + 深度学习基础（反向传播/CNN/过拟合）+ 训练图像分类模型；LeetCode Hot100 高频题 30 题</div>
+        <div class="verify">验收：独立训练并调优分类模型；能讲清过拟合/BN/损失函数</div>
+      </div>
+      <div class="wk" style="--wc:#9BBBF4;">
+        <div class="head"><b>W3-4 语言模型</b><span>第 3-4 周 · 11月上-中</span></div>
+        <div class="content">Transformer 精读（Illustrated + 李沐视频）+ nanoGPT 复现 + LLM 原理速览（预训练/SFT/RLHF/DPO 概念）</div>
+        <div class="verify">验收：从零复现迷你 GPT；能默写 Attention 公式与 KV Cache 原理</div>
+      </div>
+      <div class="wk" style="--wc:#94D8C3;">
+        <div class="head"><b>W5 视觉对齐</b><span>第 5 周 · 11月中下旬</span></div>
+        <div class="content">ViT + CLIP 论文精读 + 图文检索 demo + 对比学习理解</div>
+        <div class="verify">验收：CLIP 检索 demo 可演示；讲清 InfoNCE 与图文对齐</div>
+      </div>
+      <div class="wk" style="--wc:#8BC8EA;">
+        <div class="head"><b>W6-7 VLM 主战场</b><span>第 6-7 周 · 11月底-12月初</span></div>
+        <div class="content">VLM 论文谱系精读（LLaVA/BLIP-2/Qwen-VL/InternVL）+ LLaVA 复现（跑通 + 改一处）+ 微调 Qwen-VL 垂直任务项目</div>
+        <div class="verify">验收：完成一个 VLM 微调项目（仓库+README+评测）；能 5 分钟讲清 VLM 架构与训练链路</div>
+      </div>
+      <div class="wk" style="--wc:#F4B393;">
+        <div class="head"><b>W8 面试冲刺</b><span>第 8 周 · 12月中</span></div>
+        <div class="content">八股整理（L1-L5 全部过一遍）+ 项目深挖演练 + Hot100 第 2 遍 + 简历定稿 + 模拟面试</div>
+        <div class="verify">验收：简历定稿；模拟面试 30 秒讲清项目、Hot100 随机题 1 小时内完成</div>
+      </div>
+      <div class="mstone">
+        <div class="box">
+          <b>缓冲期（12月中-2027年2月）：</b>每周 8-10 小时保持手感——LeetCode + 完善项目 + 过面经。<br>
+          <b>春季投递窗口（2027年2-5月）：</b>2 月中下旬投递 → 3 月笔试密集 → 3-5 月面试密集，这是你的第一轮正式投递。日常实习全年滚动，可随时补投。
+        </div>
+      </div>
+    </div>
+    <div class="fig-note">图为 8 周冲刺推进示意，时间可按个人进度整体平移；每周未达标按第五节调整规则压缩外围保核心。</div>
+  </div>
+
+  <h2>二、知识体系：六层知识地图</h2>
+  <p class="sec-desc">每层都有动手验收标准，避免停留在"懂概念"。L5（VLM 核心）是主战场；L6 在冲刺期只做概念了解，实操推迟到缓冲期。</p>
+  <div class="layers">
+    <div class="layer"><div class="tag lv-0"><div class="lv">L0</div><div class="nm">工具链</div></div>
+      <div class="body"><div class="topics">Python、PyTorch、Linux、Git、LeetCode 入门</div>
+      <div class="verify"><b>验收：</b>独立训练一个 CNN 分类器；LeetCode 累计 100 题</div></div></div>
+    <div class="layer"><div class="tag lv-1"><div class="lv">L1</div><div class="nm">深度学习基础</div></div>
+      <div class="body"><div class="topics">反向传播、优化器（SGD/Adam）、损失函数、CNN（卷积/池化/BN）、正则化与过拟合</div>
+      <div class="verify"><b>验收：</b>手写 MLP/CNN；能根据训练曲线定位并修复过拟合</div></div></div>
+    <div class="layer"><div class="tag lv-2"><div class="lv">L2</div><div class="nm">Transformer</div></div>
+      <div class="body"><div class="topics">Attention（Q/K/V、缩放点积）、Multi-Head、位置编码（绝对/RoPE）、Decoder-only、KV Cache</div>
+      <div class="verify"><b>验收：</b>复现 nanoGPT，训练出能生成文本的小模型</div></div></div>
+    <div class="layer"><div class="tag lv-3"><div class="lv">L3</div><div class="nm">大语言模型</div></div>
+      <div class="body"><div class="topics">Tokenizer（BPE）、预训练目标、SFT、RLHF/DPO、LoRA/QLoRA、上下文学习</div>
+      <div class="verify"><b>验收：</b>用 LoRA 微调开源 LLM 到垂直任务并做对比实验</div></div></div>
+    <div class="layer"><div class="tag lv-4"><div class="lv">L4</div><div class="nm">视觉与图文对齐</div></div>
+      <div class="body"><div class="topics">ViT（patch、CLS token）、CNN 骨干、CLIP 对比学习（图文对、InfoNCE）、图文检索</div>
+      <div class="verify"><b>验收：</b>用 CLIP 搭建图文检索 demo，讲清对比学习原理</div></div></div>
+    <div class="layer"><div class="tag lv-5"><div class="lv">L5</div><div class="nm">VLM 核心</div></div>
+      <div class="body"><div class="topics">三件套架构（视觉编码器+投影器+LLM）；LLaVA 两阶段训练；模型谱系；幻觉与缓解；多模态评测</div>
+      <div class="verify"><b>验收：</b>复现/微调 LLaVA 或 Qwen-VL，完成一个垂直任务项目</div></div></div>
+    <div class="layer"><div class="tag lv-6"><div class="lv">L6</div><div class="nm">进阶与工程</div></div>
+      <div class="body"><div class="topics">多模态 SFT/RLHF/DPO、视频理解、多模态 Agent、高效推理（vLLM/LMDeploy/量化）、分布式训练（DeepSpeed/FSDP）</div>
+      <div class="verify"><b>验收（缓冲期）：</b>用 vLLM 部署多模态模型；做一个多模态 Agent demo</div></div></div>
+  </div>
+
+  <h2>三、大厂 VLM 岗位：五类岗位对比</h2>
+  <p class="sec-desc">同一家公司内部，"研究院/实验室"偏研究，业务团队偏工程应用，平台组偏系统。投递前看 JD 关键词："论文优先/探索新方法"是研究向，"业务落地/数据工程/上线"是工程向。</p>
+  <div class="card" style="padding:6px;">
+  <table>
+    <thead><tr><th style="width:16%">岗位类型</th><th style="width:34%">典型工作内容</th><th style="width:28%">硬门槛</th><th style="width:22%">适合谁</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pos-tag" style="background:#C9A7E8">研究型</span></td>
+        <td>新方法探索、前沿论文复现、对比实验、发 paper</td>
+        <td>顶会论文优先；数学/理论扎实；通常博士或科研强硕士</td><td>有学术追求、实验室资源好</td></tr>
+      <tr><td><span class="pos-tag" style="background:#8BC8EA">工程/应用型</span></td>
+        <td>模型训练调优、数据工程、业务落地（电商图文理解、搜索、内容审核）</td>
+        <td>PyTorch 工程能力、数据意识、能独立跑通训练流程</td><td><b>大多数硕士，岗位最多，主攻方向</b></td></tr>
+      <tr><td><span class="pos-tag" style="background:#94D4D0">系统/推理优化</span></td>
+        <td>vLLM/TensorRT-LLM 部署、量化、分布式训练（Megatron/DeepSpeed）</td>
+        <td>C++/CUDA、系统知识、性能调优</td><td>系统方向、对性能敏感</td></tr>
+      <tr><td><span class="pos-tag" style="background:#94D8C3">评测/数据</span></td>
+        <td>评测体系建设、数据集构建、badcase 分析、自动化评估</td>
+        <td>细心、脚本强、理解模型能力边界</td><td><b>入门友好，适合第一段实习</b></td></tr>
+      <tr><td><span class="pos-tag" style="background:#F4B393">Agent/应用</span></td>
+        <td>多模态 Agent、工具调用、GUI Agent、RAG 应用开发</td>
+        <td>产品感、快速开发、熟悉主流 Agent 框架</td><td>对应用和产品感兴趣</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>四、开源项目阶梯：从跑通到贡献</h2>
+  <p class="sec-desc">第 1-5 阶分布在八周内完成；第 6 阶（开源 PR）和 L6 进阶放到冲刺后的缓冲期，是面试官"查得到"的硬加分。</p>
+  <div class="card" style="padding:14px 18px;">
+    <div class="ladder">
+      <div class="step"><div class="s-name">nanoGPT 复现 <span style="color:#6B7280;font-size:12px;">W3-4</span></div><div class="s-do">读懂并复现训练一个迷你 GPT</div><div class="s-get">LLM 预训练全链路落地，L2/L3 验收</div></div>
+      <div class="step"><div class="s-name">llm.c / 手写反向传播 <span style="color:#6B7280;font-size:12px;">W3-4</span></div><div class="s-do">用纯 C/Python 实现一版训练</div><div class="s-get">反向传播彻底搞懂，面试手写不虚</div></div>
+      <div class="step"><div class="s-name">CLIP 图文检索 demo <span style="color:#6B7280;font-size:12px;">W5</span></div><div class="s-do">开源 CLIP 权重做检索 + 自己训对比学习小模型</div><div class="s-get">L4 验收，讲透对比学习</div></div>
+      <div class="step"><div class="s-name">复现 LLaVA / LLaVA-NeXT <span style="color:#6B7280;font-size:12px;">W6-7</span></div><div class="s-do">跑通官方训练/推理代码，改动一个模块</div><div class="s-get">VLM 两阶段训练全流程，L5 核心验收</div></div>
+      <div class="step"><div class="s-name">微调 Qwen3-VL / InternVL <span style="color:#6B7280;font-size:12px;">W6-7</span></div><div class="s-do">用 ms-swift/xtuner/LlamaFactory 做 LoRA 微调到垂直任务（文档理解、细粒度计数、场景 VQA），写 README + 评测</div><div class="s-get">后训练工程能力，简历主打项目</div></div>
+      <div class="step"><div class="s-name">开源社区提 PR <span style="color:#6B7280;font-size:12px;">缓冲期</span></div><div class="s-do">从 good first issue 开始，给 LLaVA-VL、Qwen-VL、vLLM、LMDeploy、ms-swift、OpenCompass 提交修复/文档/功能</div><div class="s-get">简历硬加分，可核查的 commit 产出</div></div>
+    </div>
+  </div>
+
+  <h2>五、冲刺期每周节奏与调整规则</h2>
+  <div class="cols">
+    <div class="card">
+      <h4 style="margin-top:0;color:#4A6FA5;">冲刺期每周节奏</h4>
+      <ul class="tick">
+        <li>代码实操 ≥ 30 小时（每天 4-5 小时，周末 8 小时攻坚）</li>
+        <li>论文/博客精读 3-5 篇，每篇写 200 字总结</li>
+        <li>LeetCode 每日 1-2 题（Hot100 为主线）</li>
+        <li>每 3-4 天一个小里程碑：demo / 核心论文 / 实验对比</li>
+        <li>每周复盘：写下本周能"讲给面试官听"的 3 个知识点</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4 style="margin-top:0;color:#4A6FA5;">调整规则</h4>
+      <ul class="tick">
+        <li>每周未达标 → 周末补短板，压缩下一周非核心内容</li>
+        <li>不可压缩项：nanoGPT 复现、VLM 微调项目、Hot100 两遍</li>
+        <li>可推迟项：L6 进阶、开源 PR、更多论文精读 → 缓冲期</li>
+        <li>面试提前到来 → 切换"项目深挖 + Hot100 + 八股"三件套</li>
+        <li>算力不足 → Colab / 国内算力平台 / 换更小模型（4B/2B 级）</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout warn">
+    <b>2 个月冲刺的取舍：</b>这是把常规 6-9 个月规划压到 8 周的加速版，要求每周 35-40 小时且一次到位；如果某周验收反复不过，就压缩外围内容保核心，不要硬跳基础。若 12 月中仍未达到 W8 标准，最差情况是把正式投递推迟到研一日常实习，损失可控。
+  </div>
+
+  <h2>六、第 1-2 周行动清单（冲刺版）</h2>
+  <div class="card">
+    <ul class="tick">
+      <li>装环境：Python 3.10+、Anaconda、PyTorch 2.x、VS Code、Git；注册 GitHub</li>
+      <li>跑完 PyTorch 官方 60 分钟教程，训练第一个 MNIST 分类器</li>
+      <li>LeetCode Hot100 开始：第 1-2 周完成数组/哈希/双指针 30 题（节奏加倍）</li>
+      <li>读《The Illustrated Transformer》+ 李沐 Transformer 论文精读，写 300 字理解</li>
+      <li>建学习仓库：README 写 2 个月规划，每天提交学习日志</li>
+      <li>确认算力来源：本地 GPU / Colab / 校园卡 / 租卡平台</li>
+      <li>第 2 周结束自查：能否独立写完并训练一个分类模型？能，进入 W3；不能，用周末补齐</li>
+    </ul>
+  </div>
+
+  <h2>七、资源速查</h2>
+  <div class="res">
+    <div class="card"><h4>教程</h4><ul>
+      <li>李沐《动手学深度学习》+ B 站论文精读（Transformer/ViT/CLIP）</li>
+      <li>Andrej Karpathy "Zero to Hero" 系列 + nanoGPT</li>
+      <li>Hugging Face 官方 LLM Course</li>
+    </ul></div>
+    <div class="card"><h4>博客</h4><ul>
+      <li>Jay Alammar《The Illustrated Transformer》</li>
+      <li>Lilian Weng：LLM 与多模态深度系列</li>
+      <li>苏剑林《科学空间》：RoPE、对比学习推导</li>
+      <li>牛客网面经："多模态 面经""大模型 实习 面经"</li>
+    </ul></div>
+    <div class="card"><h4>开源仓库</h4><ul>
+      <li>模型/训练：LLaVA-NeXT、Qwen3-VL、InternVL、LLaMA-Factory、ms-swift、xtuner</li>
+      <li>推理/部署：vLLM、LMDeploy、flash-attention</li>
+      <li>评测：OpenCompass</li>
+    </ul></div>
+  </div>
+
+  <footer>
+    <b>信息来源与时效说明：</b>实习经验与岗位要求基于 2026 年 10 月公开检索（牛客网经验帖/面经、火山引擎开发者社区实习指南、字节/小米/阿里官方招聘页、求职社区分享）。岗位 JD 每年更新，投递前以官方招聘页为准；知识体系以经典论文与开源项目为锚。
+    <br><br>
+    来源链接：
+    <a href="https://developer.volcengine.com/articles/7391689946211614758">火山引擎·算法岗暑期实习指南</a> ·
+    <a href="https://m.nowcoder.com/discuss/724733407367835648">牛客·26届暑期实习时间线</a> ·
+    <a href="https://jobs.bytedance.com/campus/position/7330161472447809842/detail">字节·电商多模态实习生JD</a> ·
+    <a href="https://jobs.bytedance.com/campus/m/position/7593178993274685701/detail">字节·豆包手机助手多模态JD</a> ·
+    <a href="https://xiaomi.jobs.f.mioffice.cn/internship/m/position/detail/7646703858689870107">小米·多模态大模型实习生JD</a> ·
+    <a href="https://leetcode.cn/discuss/post/TuCXSG/">阿里淘天·AI搜索推荐实习</a> ·
+    <a href="https://m.nowcoder.com/discuss/876877077318754304">牛客·面试官谈简历AI力</a>
+  </footer>
+
+</div>
+</body>
+</html>
